@@ -31,7 +31,8 @@ section.alternate-background {
 }
 
 main img {
-  width: 100px;
+  width: 100%;
+  margin-bottom: 16px;
 }
 
 /* ---  Groups & Items --- */
@@ -60,8 +61,20 @@ header {
 
 .logo {
   font-family: "Pangolin", cursive;
-  font-size: 72px;
+  font-size: 3em;
   color: #fff;
+}
+
+header nav {
+  display: flex;
+  justify-content: center;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding-left: 0;
 }
 
 header nav ul li {
@@ -71,7 +84,11 @@ header nav ul li {
 header nav ul li a {
   color: #fff;
   text-decoration: none;
-  padding: 0 20px 0 0;
+  padding-right: 20px;
+}
+
+header nav ul li:last-child a {
+  padding-right: 0px;
 }
 
 header nav ul li a:hover {
@@ -81,12 +98,25 @@ header nav ul li a:hover {
 
 /* -------  Search Form ------- */
 form {
-  border: 2px solid #ff385c;
   padding: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+fieldset {
+  border: 2px solid #ff385c;
+  padding: 20px;
+  width: 100%;
+}
+
+form fieldset div {
+  display: flex;
+  justify-content: space-between;
 }
 
 form label {
   font-weight: bold;
+  padding-right: 20px;
 }
 
 form select,
@@ -117,3 +147,99 @@ footer p {
 }
 
 /* -------  Media Query ------- */
+@media all and (min-width: 480px) {
+  header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+  }
+
+  .logo {
+    font-size: 48px;
+  }
+
+  header nav {
+    align-items: center;
+    padding-right: 40px;
+  }
+
+  fieldset {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  form fieldset div {
+    display: block;
+    padding: 5px 0;
+  }
+
+  form label {
+    padding-right: 0px;
+    width: 100%;
+  }
+
+  form select,
+  form input {
+    margin-right: 20px;
+    margin-bottom: 0px;
+  }
+
+  form button {
+    font-size: 24px;
+    padding: 15px;
+  }
+
+  #about div {
+    display: flex;
+    align-items: center;
+  }
+
+  #about div img {
+    flex: 1;
+    padding-right: 10px;
+    width: 40px;
+  }
+
+  #about div p {
+    flex: 2;
+  }
+
+  .idea {
+    width: 49%;
+    flex-direction: column;
+  }
+
+  #ideas div {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #host-div {
+    display: flex;
+    align-items: center;
+  }
+
+  #host-div img {
+    width: 50%;
+  }
+}
+
+@media all and (max-width: 1300px) and (min-width: 480px) {
+  .button-div {
+    width: 100%;
+    font-size: 24px;
+    padding: 15px;
+    text-align: center;
+  }
+
+  form button {
+    width: 50%;
+    font-size: 24px;
+    padding: 15px;
+  
+  }
+}
